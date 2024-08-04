@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'Form')">Registro</button>
+        <button class="tablink" onclick="openTab(event, 'Records')">Registros</button>
+    </div>
+
+    <div id="Form" class="tabcontent">
+        <h2>Formulario de Registro</h2>
+        <form id="registerForm">
+            <label for="firstName">Nombres:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            
+            <label for="lastName">Apellidos:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            
+            <label for="idNumber">Número de Cédula:</label>
+            <input type="text" id="idNumber" name="idNumber" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+	    <!-- -->
+            <label for="photo">Foto:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+            
+            <button type="submit">Registrarse</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <div id="Records" class="tabcontent">
+        <h2>Lista de Registros</h2>
+        <table id="recordsTable">
+            <thead>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Número de Cédula</th>
+                    <th>Correo Electrónico</th>
+                    <th>Foto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Registros se mostrarán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
