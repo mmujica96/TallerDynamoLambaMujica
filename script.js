@@ -18,6 +18,8 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const idNumber = document.getElementById('idNumber').value;
     const email = document.getElementById('email').value;
     const photo = document.getElementById('photo').files[0];
+	
+	console.log(photo);
 
     if (photo) {
         // Subir la photo a S3
@@ -52,6 +54,8 @@ const enviarDatos = (firstName, lastName, idNumber, email,photoUrl ) => {
             photo: photoUrl // URL de la photo
         }
     };
+	
+	console.log(data);
   
     // Enviar datos a la API Gateway
     fetch('https://dvgxskfwkl.execute-api.us-east-1.amazonaws.com/default/formulario', {
@@ -75,6 +79,7 @@ function cargarRegistros() {
     })
     .then(response => response.json())
     .then(data => {
+		console.log(data);
         const registros = data.Items;
         const listaRegistros = document.getElementById('lista-registros');
         listaRegistros.innerHTML = '';  
