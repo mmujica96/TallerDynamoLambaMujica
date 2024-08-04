@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="tabs">
-        <button class="tablink" onclick="openTab(event, 'Form')">Registro</button>
-        <button class="tablink" onclick="openTab(event, 'Records')">Registros</button>
+        <button class="tablink" onclick="mostrarSeccion('seccion-formulario')">Registro</button>
+        <button class="tablink" onclick="mostrarSeccion('seccion-formulario')">Registros</button>
     </div>
 
-    <div id="Form" class="tabcontent">
+    <div id="seccion-formulario" class="tabcontent">
         <h2>Formulario de Registro</h2>
         <form id="registerForm">
             <label for="firstName">Nombres:</label>
@@ -30,14 +30,16 @@
 	    <!-- -->
             <label for="photo">Foto:</label>
             <input type="file" id="photo" name="photo" accept="image/*" required>
-            
+            <button id="upload-button">Subir</button>
+			
             <button type="submit">Registrarse</button>
         </form>
         <p id="message"></p>
     </div>
 
-    <div id="Records" class="tabcontent">
+    <div id="seccion-lista" class="tabcontent">
         <h2>Lista de Registros</h2>
+		<button onclick="cargarRegistros()">Mostrar Registros</button>
         <table id="recordsTable">
             <thead>
                 <tr>
@@ -48,12 +50,12 @@
                     <th>Foto</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="lista-registros">
                 <!-- Registros se mostrarán aquí -->
             </tbody>
         </table>
     </div>
-
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
